@@ -1,19 +1,17 @@
-# Pour la BDD
 version: '3.1'
 
 services:
 
+  api:
+    container_name: api-beers
+    build: \api\Dockerfile
+    ports:
+      - 8000:8080
+    depends_on:
+      - db
+    
   db:
-    image: mysql
-    container_name: db-beers
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: db-beers
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:5000
+      MY_SQL_DATABASE: beer
+      container_name: db-beers
