@@ -1,6 +1,4 @@
 #Pour la BDD
-FROM mysql
+FROM mysql:5.7
 
-WORKDIR /app
-
-COPY . .
+COPY ./beer.sql ./docker-entrypoint-initdb.d
