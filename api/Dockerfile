@@ -1,8 +1,8 @@
 #Pour l'API
 FROM python
-WORKDIR /usr/src/app
+WORKDIR /app
 EXPOSE 5000
-COPY . /usr/src/app/
+COPY . .
 #installation des dépendances
 RUN pip install -r requirements.txt
 #démarre le serveur flask
